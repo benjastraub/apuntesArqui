@@ -1164,7 +1164,7 @@ Conceptos principales
 
 ## UML: MOF (Meta object family)
 
-PONER IMAGEN
+![Imagen MOF](Imagenes/5MOF.png "MOF")
 
 Infraestructura UML
 * Define elementos usados en el meta modeo de UML y en la superestructura
@@ -1172,7 +1172,7 @@ Infraestructura UML
 Superestructura UML
 * Define el meta modelo de UML
 
-PONER DIAGRAMA DIAGRAMAS
+![Imagen UML](Imagenes/5UML.png "UML")
 
 ## Asociación entre clases
 
@@ -1196,7 +1196,7 @@ Extensión blanda
     * Añaden semántica adicional a un dominio específico
 
 ## Asociaciones adicionales
-PONER IMAGEN ASOCIACIONES ADICIONALES
+![Imagen Asociaciones adicionaels](Imagenes/5AsociacionesAdicionales.png "Asociaciones adicionales")
 
 ## Vista de modelo 4 + 1
 
