@@ -111,7 +111,7 @@ Interdependencia entre módulos
 
 ### Capas de abstracción
 
-![Imagen capa de abstracción](./1AbstractionLayer.png "Capa de abstracción")
+![Imagen capa de abstracción](Imagenes/1AbstractionLayer.png "Capa de abstracción")
 
 ## Roles del arquitecto
 
@@ -452,7 +452,7 @@ Conjunto de asociaciones específicas entre componentes y conectores
 
 ## Patrones, estilos y DSSAs
 
-![Imagen Patrones, estilos y DSSAs](./3PatronesEstilosDSSAs.png "Patrones, estilos y DSSAs")
+![Imagen Patrones, estilos y DSSAs](Imagenes/3PatronesEstilosDSSAs.png "Patrones, estilos y DSSAs")
 
 ### Estilo arquitectónico
 
@@ -479,19 +479,19 @@ Objetivo: separar la información, presentación e interacción del usuario.
 * Cambia el modelo: enviar notificación a la vista y al controlador
 * Las acciones del usuario (interfaz) generan un evento que se envía al controlador que a su vez actualizará el modelo
 
-![Imagen MVC](./3MVC.png "MVC")
+![Imagen MVC](Imagenes/3MVC.png "MVC")
 
 ### Patrón Estado - lógica - presentación (3 capas)
 
 Objetivo: separación entre estado, presentación y funcionalidad
 
-![Imagen 3 Capas](./3-3capas.png "3 capas")
+![Imagen 3 Capas](Imagenes/3-3capas.png "3 capas")
 
 ### Patrón sensor - controlador - actuador
 
 Objetivo: separar la captura de infromación (leer), del procesamiento y de la manipulación de objetos (actuar)
 
-![Imagen Sensor - controlador - actuador](./3SensorControladorActuador.png "Sensor - controlador - actuador")
+![Imagen Sensor - controlador - actuador](Imagenes/3SensorControladorActuador.png "Sensor - controlador - actuador")
 
 ## Estilo arquitectónico
 
@@ -575,7 +575,7 @@ Desventajas
 * Objetos deben conocer las identidades de los servidores
 * Hay efectos secundarios en las invocaciones de los métodos
 
-![Imagen Estilo orientado a objetos](./3EstiloOrientadoAObjetos.png "Estilo orientado a objetos")
+![Imagen Estilo orientado a objetos](Imagenes/3EstiloOrientadoAObjetos.png "Estilo orientado a objetos")
 
 ### Estilo: En capas
 
@@ -596,7 +596,7 @@ Desventajas
 * No es aplicable universalmente
 * Desempeño: saltarse capas, nivel de abstraccióñ correcto
 
-![Imagen Estilo en capas](./3EstiloEnCapas.png "Estilo en capas")
+![Imagen Estilo en capas](Imagenes/3EstiloEnCapas.png "Estilo en capas")
 
 1. Máquinas virtuales
 
@@ -606,7 +606,7 @@ Desventajas
 * Ventajas: portabilidad
 * Desventaja: difícil de implementar
 
-![Imagen Maquina Virtual](./3MaquinaVirtual.png "Maquina Virtual")
+![Imagen Maquina Virtual](Imagenes/3MaquinaVirtual.png "Maquina Virtual")
 
 2. Cliente Servidor
 
@@ -665,7 +665,7 @@ Pizarra (blackboard)
     * Circuitos integrados
     * Compiladores
 
-![Imagen Blackboard](./3Blackboard.png "Blackboard")
+![Imagen Blackboard](Imagenes/3Blackboard.png "Blackboard")
 
 Basado en reglas
 
@@ -691,7 +691,7 @@ La arquitectura permanece constante
 
 Programación de interfaz de usuario
 
-![Imagen Intérprete](./3EstiloInterprete.png "Interprete")
+![Imagen Intérprete](Imagenes/3EstiloInterprete.png "Interprete")
 
 ### Estilo: código móvil
 
@@ -742,7 +742,7 @@ Publisher - suscriber:
 * Elementos de datos: subscripciones, notificaciones, información publicada
 * Altamente eficiente para diseminación de contenido en una dirección con omponentes de muy bajo acoplamiento
 
-![Publisher Subscriber](./3PublisherSubscriber.png "Publisher Subscriber")
+![Publisher Subscriber](Imagenes/3PublisherSubscriber.png "Publisher Subscriber")
 
 ### Estilo: invocación implícita
 
@@ -760,7 +760,7 @@ Basada en eventos
     * Pull: los componentes sacan los datos de los buses (tiran de ellos)
 * Altamente escalable, fácil de evolucionar, efectivo, por aplicaciones altamente distribuidas
 
-![Invocación Implícita](./3InvocacionImplicita.png "Invocación Implícita")
+![Invocación Implícita](Imagenes/3InvocacionImplicita.png "Invocación Implícita")
 
 ### Estilo: Peer to Peer
 
@@ -785,7 +785,7 @@ Computación descentralizada:
 * Escalable en cuanto a acceso a recursos y procesamientos
 * Protocolo complejo
 
-![Peer to peer](./3P2P.png "Peer to Peer")
+![Peer to peer](Imagenes/3P2P.png "Peer to Peer")
 
 ## ¿Cuándo usar qué?
 
@@ -968,7 +968,7 @@ Se notifica a los componentes (observers) el cambio de estado (eventos) de un ob
 
 Logra independencia de los componentes (debilmente acoplado)
 
-![Imagen Patrón observer](./4Observer.png "Patrón observer")
+![Imagen Patrón observer](Imagenes/4Observer.png "Patrón observer")
 
 ## Polling
 
