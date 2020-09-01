@@ -590,7 +590,7 @@ Ventajas
 * Aumentan los niveles de abstraccióñ
 * Evolución y reuso: cambios en uuna capa afectan solo a las capas adyacentes
 * Se pueden tener diferentes implementaciones de una capa manteniendo la interfaz
-* PUeden definirse interfaces estandarizadas para librerías y framworks
+* Pueden definirse interfaces estandarizadas para librerías y framworks
 
 Desventajas
 * No es aplicable universalmente
@@ -600,7 +600,7 @@ Desventajas
 
 1. Máquinas virtuales
 
-* Componentes: programas (subcomponentes) a ser ejecutados, motor de ejecucióñ, estado (datos) de los programas, estados (datos) internos del motor
+* Componentes: programas (subcomponentes) a ser ejecutados, motor de ejecución, estado (datos) de los programas, estados (datos) internos del motor
 * Conectores: llamada a procedimientos
 * Topología: capas cerradas o grafo acíclico dirigido (DAG)
 * Ventajas: portabilidad
@@ -634,7 +634,7 @@ Por lotes, secunecial
 Pipe & Filter
 
 * Componentes:
-    * Filtros: transforman los flujos de daros de entrada en flujos de salida
+    * Filtros: transforman los flujos de datos de entrada en flujos de salida
     * Posiblemente producen salida incrementalmente
 * Conectores: Pipes conducen los datos
 * Invariantes:
@@ -645,7 +645,7 @@ Pipe & Filter
     * Pipelines acotados: se limita a la cantidad de datos del pipe
     * Pipes tripificados: data fuertemente tipificada
 * Ventajas:
-    * Añadir, reemplazat y reusar filtros
+    * Añadir, reemplazar y reusar filtros
     * Análisis
     * Ejecución concurrente
 * Desventajas:
@@ -795,7 +795,7 @@ Computación descentralizada:
 | Main y subrutinas | El problema puede descomponerse en problemas pequeños | Aplicación es pequeña y simple | Se requieren estructuras de datos complejas. Se modificará | Performance, reusabilidad |
 | Orientado a objetos | El problema puede modelarse via entidades que interactúan | Hay un mapeo claro entre entidades del problema y objetos. Estructuras de datos complejas e inter relacionadas | Aplicaciones distribuidas en redes heterogéneas. Componentes fuertemente independientes. Se requiere alto performance | Flexibilidad, integridad |
 | Capas | Las tareas se pueden dividir en capas de abstracción o el orden del procesamiento es conocido|
-| Maquinas virtuales | La data tiene 2 partes: información y control indica cómo procesar la información | Una única capa sirve de servicio para otras aplicaciones. La interfaz de la capa base es estable. | Se requieren vareias capas. Los datos se acceden por varias capas. | Portabilidad |
+| Maquinas virtuales | La data tiene 2 partes: información y control indica cómo procesar la información | Una única capa sirve de servicio para otras aplicaciones. La interfaz de la capa base es estable. | Se requieren varias capas. Los datos se acceden por varias capas. | Portabilidad |
 | Cliente servidor | El servidor centraliza y ejecuta un proceso para varios clientes. El cliente hace pedidos al servidor y espera la respuesta para seguir | Puede centralizarse algunas tares. El procesamiento del cliente es limitado | La centralización es un punto único de falla. Ancho de banda limitado. La capacidad del cliente compite o exceda a la del servidor. | Escalabilidad, flexibilidad |
 | Flujo de datos | Datos de entrada / salida bien definidos. Salida producida al procesar en forma secuencia el input, independiente del tiempo (no hay espera, send and forget) ||||
 | En lotes, secuencial | La lectura y procesamiento de un conjunto de datos (lote) genera una sola salida. La entrada se procesa por una serie de transformación conectadas secuencialmente | Problema dividible en una secuencia de pasos | Se requiere: interactividad, concurrencia o acceso a datos random | Reusabilidad, modificabliidad, performance no importa |
@@ -807,7 +807,7 @@ Computación descentralizada:
 | Intérprete | El intérprewte parsea y ejecuta un stream de entrada actualiza su estado | Se requiere conducta dinámica y mucha personalizacióñ de usuario | Se requiere alto performance | Portabilidad, modificabilidad, performance (-) |
 | Código móvil | Se mueve el códgigo a un host que lo ejecuta | Es más eficiente mover el proceso cerca de los datos que al revés. Se customiza código local con código local con código externo, dinámicamente | No se puede garantizar las seguridades del código móvil o tiene acceso restringido. Se reequiere fuerte control de versiones | Modificabilidad, estensibilidad, performance |
 | Invocación implícita | Se cracteriza por llamadas indirectas e implícitas, tales como, respuestas a notificaciones o eventos |
-| Publisher - subscriber | Un publicador difunde mensajes a subscriptores | Com,ponentes débilmente acoplados. Los datos de subscripción son pequeños y fáciles de transportar | No hay middleware para soportar muchos datos | Escalabilidad, flexibilidad, performance |
+| Publisher - subscriber | Un publicador difunde mensajes a subscriptores | Componentes débilmente acoplados. Los datos de subscripción son pequeños y fáciles de transportar | No hay middleware para soportar muchos datos | Escalabilidad, flexibilidad, performance |
 | Basado en eventos | Componentes independientes emiten y reciben eventos asíncronamente | Componentes conurrentes e independientes. Componentes heterrogéneos, distribuidos y en red | Se requieren garantías de procesamiento de eventos en tiempo real | Escalabilidad, flexibilidad, performance |
 | Peer to Peer | Los peer guardan estados (datos) y actúan como clientes y como servidores | Los peer se distribuyen en redes que pueden ser heterogeneas e independientes. Se requiere robustez ante fallas idnependientes. Se requiere alta escalabilidad | No se puede garantizar la confiabilidad de peers independientes. Hay nodos designados para dexcubrir recursos que pueden no estar disponibles | Escalabilidad, flexibilidad, performance |
 
@@ -925,7 +925,7 @@ Proveen mecanismos de sincronización
 | Comunicación | Streams | Llamada a procedimientos | Acceso a datos |  |
 | Coordinación | Llamada a procedimientos |  |  | Árbitro |
 | Conversión | Acceso a datos |  | Adaptador |  |
-| Facilitación |  |  | Árbitro | Links distribuidor |
+| Facilitación |  | Árbitro |  | Links distribuidor |
 
 ## Llamada a procedimientos
 
@@ -1220,4 +1220,179 @@ Vista física
 * Cómo se instala el sistema y cómo se ejcuta (en una red de computadores)
 * Diagramas de despliegue
 
+# Clase 6 - Escalabilidad
 
+La escalabilidad habla de que el software pueda soportar más datos o más tráfico. Procesa tareas más grandes
+
+## Diseño para NFRs
+
+Un requisito no funcional es una restricción sobre la manera en la cual el sistema implementa y entrega su funcionalidad
+* Son multifuncionales
+* 
+* 
+
+Escalabilidad: capacidad del software de adaptarse para alcanzar nuevos requisitoos de tamaño y alcance
+
+Heterogeneidad
+* Capacidad del software de estar formado por múltiples partes o funciones en múltiples y dispares ambientes computacionales
+* Interna o externa
+
+Portabilidad: capacidad del software para ejecutarse en múltiples plataformas (Hw/Sw) con modificaciones mínimas y sin degradación de sus caractrerísticas funcionales y no funcionales
+
+Escalabilidadd Horizontal (scale out)
+* Añadir más computadores
+* Mejorar la velocidad de treansmisión de datos entre computadoras: ethernet, gigabits, InfiniBand, Myrinet
+Escalabilidad vertical (scale up)
+* Mejorar los computadores existentes (CPU, RAM, HDD)
+* Virtualización
+
+## Diagramas de sistemas
+
+PONER DIAGRAMAS
+
+## El problema de la escalabilidad
+
+"Escalar es como reemplazar todos los componentes de un auto mientras se conduce a 100mph" Scaling Instagram, Mike Krieger
+
+El "stack" es complejo
+
+Las herramientas de medición **no miden lo mismo** sino que pueden introducir retardos
+
+La optimización de código, en general, no es significativa
+
+Al escalar se introducen más problemas
+
+* Integridad de cachés: cache invalidation
+* Concurrencia y paralelismo: transacciones fuera de orden
+* Seguridad: se aumentan los puntos vulnerables
+* Confiabilidad: se aumentan los puntos de falla a X (fallará X-veces más a menudo o es más difícil de encontrar)
+
+## Cap Theorem
+
+Consistency, avaiability, partition tolerance. **Two out of three** (2000 conjetura de Brewer, 2002 prueba de Gilber & Lynch)
+
+Avaiabilty + Partition tolerant = No consistency
+Consistency + Partition tolerant = No avaiable
+Consistency + Avaiability = No partition tolerant
+
+Mayo 30, 2012, Artículo de Brewer revisando su teorema:
+
+* No considera latencia
+* No considera mecanismos actuales para gestionar particiones
+* No considera compensación
+* BASE (Basically Avaiable, Soft state, Eventually consistent)
+    * Soft state: cache
+
+## Componentes
+
+Dar a cada componente un propósito claro y bien definido
+
+Dar a cada componente una interfaz simple y entendible
+
+No recargar componentes con responsabilidades de interacción
+
+Evitar heterogeneidad innecesaria
+
+Fuentes de datos distribuídas
+
+Replicar data cuando es necesario
+
+## Conectores
+
+Usar conectores explícitos
+
+Dar a cada conector una responsabilidad calaramente definida
+
+Elegir el conector más simple para las tareas
+
+Diferenciar entre dependencias directas e indirectas (y asíncronas)
+
+No poner funcionalidad de la aplicación en los conectores
+
+Aprovechar conectores explícitos para ecalabilidad de datos
+* Cache, hoarding, pre-fetching, buffering
+
+## Configuraciones
+
+Evitar cuellos de botella
+* Añadir componentes: réplica, balance de carga
+
+Usar capacidades de procesamiento paralelo
+* Si el problema es naturalmente paralelizable -> escalar con eficiencia
+
+Ubicar las fuentes de datos cerca de los consumidores de datos
+*Caching, prefetching, réplica
+
+Hacer distribución trnansparente
+* Réplicas, facilidad de deployment
+
+Usar los estilos apropiadamente
+* Pub/Sub, event based
+* Intérprete, Pipe&Filter (componentes)
+
+Comunicación asíncrona
+
+## Sharding
+
+Particionar los datos de manera que tenga sentido para una aplicación (Ej: por índice, ubicación geográfica, únicamente algunas tablas, etc)
+
+* Partición horizontal (shard)
+    * Las filas de una DB (pueden ser varias tablas)
+    * Unshard pueed sitribuirse en varias máquinas
+
+Ventajas
+* Tabls ppequeñas (pocas tuplas -> búsquedas más rápidas)
+* Distribuiídas en varias máquinas (tiempo de búsqueda se divide)
+
+Cuidado: un buen shard no requiere compartir datos
+
+Riesgos
+* Complejidad del SQL
+* Complejidad en el software
+* Punto único de falla (un shard corrupto podría distribuir todo el sistema)
+* Failover más complejo (hash de los shards)
+* Backup complejo
+* Complejidad operacional (ej: modificar esquema)
+* Writing (retardo en réplicas lentas)
+* Cross shard joins
+
+## Partitioning
+
+Otra forma de separar la infromación es por algún otro parámetro (tiempo, valor de parámetros, etc)
+
+* Menores tamaños de tablas, mejores desempeños
+* Índides más eficientes
+* Consultas más complejas
+
+## Cache
+
+Almacenamos una respuesta (que creemos que va a ser solicitada con alta frecuencia) para reducir la latencia
+
+Problemas:
+* Cache invalidation
+* Consistencia
+* Cuellos de botella
+
+Soluciones
+* Content Delivery Networks (CDNs cache), Memorization, statelessness, buenas prácticas
+
+## Recomendaciones de Instagram
+
+1. Pruebas unitarias y funcionales **extensivas**
+2. Mantener sistema DRY (don't repeat yourself)
+3. Acoplamiento débil (notificaciones/señales)
+4. Gran parte del código en Python (C sólo si hace falta)
+5. Revisiones de código frecuentes
+6. Mucho monitoreo (munin, statsd, pagerduty, ...)
+7. No reinventes la rueda
+8. No sobre-optimices, ni adivines donde vendrá el problema de escalabilidad
+
+## Buenas prácticas en el frontend
+
+* Evitar imágenes, usar sprites, combinar archivos (scripts, imágenes), zipear archivos, usar caches de servidor, manejar caches, E-tags
+* Stylesheets al principio
+* Scripts al final
+* No usar CSS expressions
+* Javascript y CSS deben ser externos
+* Hacer Ajax cacheable
+* Minimizar los Iframes, cookies, ...
