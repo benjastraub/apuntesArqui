@@ -1228,8 +1228,8 @@ La escalabilidad habla de que el software pueda soportar más datos o más tráf
 
 Un requisito no funcional es una restricción sobre la manera en la cual el sistema implementa y entrega su funcionalidad
 * Son multifuncionales
-* 
-* 
+* Se miden en términos cuantitativos y cualitativos
+* Influyen fuertemente los componentes, conectores y sus configuraciones
 
 Escalabilidad: capacidad del software de adaptarse para alcanzar nuevos requisitoos de tamaño y alcance
 
@@ -1242,6 +1242,7 @@ Portabilidad: capacidad del software para ejecutarse en múltiples plataformas (
 Escalabilidadd Horizontal (scale out)
 * Añadir más computadores
 * Mejorar la velocidad de treansmisión de datos entre computadoras: ethernet, gigabits, InfiniBand, Myrinet
+
 Escalabilidad vertical (scale up)
 * Mejorar los computadores existentes (CPU, RAM, HDD)
 * Virtualización
