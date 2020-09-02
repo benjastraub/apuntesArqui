@@ -458,12 +458,12 @@ Conjunto de asociaciones específicas entre componentes y conectores
 
 Colección nombrada (con nombre) de **decisiones** de diseño arquitectónico que:
 * Se aplican a un contexto de desarrollo dado
-* Restringen las decisiones de diseño que son específicas a un sisdtema particular dentro de ese contexto
+* Restringen las decisiones de diseño que son específicas a un sistema particular dentro de ese contexto
 * Obtiene las ventajas de cada sistema resultante
 
 ### Patrón arquitectónico
 
-Colección nombrada de decisiones de diseño arquitectónico aplicadas a un problema de diseño recurrente que se parametriza según los contexxtos de desarrollo en que aparece el problema
+Colección nombrada de decisiones de diseño arquitectónico aplicadas a un problema de diseño recurrente que se parametriza según los contextos de desarrollo en que aparece el problema
 
 Diferencias con estilo arquitectónico:
 * Alcance: contexto de desarrollo (estilo-estratégico), problema de diseño (patrón-táctico)
@@ -485,7 +485,7 @@ Objetivo: separar la información, presentación e interacción del usuario.
 
 Objetivo: separación entre estado, presentación y funcionalidad
 
-![Imagen 3 Capas](Imagenes/3-3capas.png "3 capas")
+![Imagen 3 Capas](Imagenes/3-3Capas.png "3 capas")
 
 ### Patrón sensor - controlador - actuador
 
@@ -497,7 +497,7 @@ Objetivo: separar la captura de infromación (leer), del procesamiento y de la m
 
 Colección nombrada (con nombre) de **decisiones** de diseño arquitectónico que:
 * Se aplican a un contexto de desarrollo dado
-* Restringen las decisiones de diseño que son específicas a un sisdtema particular dentro de ese contexto
+* Restringen las decisiones de diseño que son específicas a un sistema particular dentro de ese contexto
 * Obtiene las ventajas de cada sistema resultante
 
 ### Propiedades básicas del estilo arquitectónico
@@ -509,7 +509,7 @@ Conjunto de reglas de **configuración**
 * Restricciones topológicas que determinan cómo pueden componerse los elementos
 
 Interpretación semántica
-* Las comosiciones tienen un significado bien definido
+* Las composiciones tienen un significado bien definido
 * Es posible analizar los sistemas creados
 
 ### Beneficios del estilo arquitectónico
@@ -564,11 +564,11 @@ Vocabulario
 * Conectores: mensajes e invocación de métodos
 
 Invariante del estilo
-* Los objetos son responsables de la integridad de su representacióñ interna
-* La representacióñ interna se oculta a otros objetos
+* Los objetos son responsables de la integridad de su representación interna
+* La representación interna se oculta a otros objetos
 
 Ventajas
-* Maleabilidad infinita de la implementacióñ interna del objeto
+* Maleabilidad infinita de la implementación interna del objeto
 * Descomposición del sistema en conjuntos de agentes que interactúan
 
 Desventajas
@@ -587,14 +587,14 @@ Conectores
 * Protocolos de interacción entre capas
 
 Ventajas
-* Aumentan los niveles de abstraccióñ
-* Evolución y reuso: cambios en uuna capa afectan solo a las capas adyacentes
+* Aumentan los niveles de abstracción
+* Evolución y reuso: cambios en una capa afectan solo a las capas adyacentes
 * Se pueden tener diferentes implementaciones de una capa manteniendo la interfaz
-* Pueden definirse interfaces estandarizadas para librerías y framworks
+* Pueden definirse interfaces estandarizadas para librerías y frameworks
 
 Desventajas
 * No es aplicable universalmente
-* Desempeño: saltarse capas, nivel de abstraccióñ correcto
+* Desempeño: saltarse capas, nivel de abstracción correcto
 
 ![Imagen Estilo en capas](Imagenes/3EstiloEnCapas.png "Estilo en capas")
 
@@ -624,11 +624,11 @@ RPC: remote procedure call (RPI: Invocation)
 
 ### Estilo: Flujo de datos
 
-Por lotes, secunecial
+Por lotes, secuencial
 
 * Componentes: programas separados se ejecutan en orden
 * Conectores: personas (sneaker-net), sistemas de mensajería, colas, etc.
-* Elementos de datos pasados expplícitamente al programa
+* Elementos de datos pasados explícitamente al programa
 * El "abuelo" de los estilos arquitectónicos
 
 Pipe & Filter
@@ -672,16 +672,16 @@ Basado en reglas
 * Un motor de inferencia parsea las entradas de los usuarios y determina si es un hecho, una regla (y los añada a la base de conocimientos) o una consulta (y la resuelve)
 * Los hechos y reglas se añaden a la base de conocimiento
 * Las consultas se ejecutan sobre la base de conocimiento para evaluar las reglas que se puedan aplicar y resolver la consulta
-* Componentes:interfaz de usuario, motoe de inferencia, base de conocimiento
-* Conectores: componentes fuertemente interconectados vía llamadasa procedimientos y/o llamadas a memoria compartida
+* Componentes: interfaz de usuario, motor de inferencia, base de conocimiento
+* Conectores: componentes fuertemente interconectados vía llamadas a procedimientos y/o llamadas a memoria compartida
 * Elementos de datos: hechos y consutas
-* Riesgo: al aumentas el número de reglas es muy dificil entender las interacciones entre las reglas
+* Riesgo: al aumentar el número de reglas es muy dificil entender las interacciones entre las reglas
 
 ### Estilo: intérprete
 
-El intérprete parse y ejecuta comandos de entrada, actualiza el estado mantenido por el intérprete
+El intérprete parsea y ejecuta comandos de entrada, actualiza el estado mantenido por el intérprete
 
-Componentes: intérprete de comandos, programa de interpretacióñ del estado, interfaz de usuario
+Componentes: intérprete de comandos, programa de interpretación del estado, interfaz de usuario
 
 Conectores: llamadas a preocedimientos y estado compartido
 
@@ -695,7 +695,7 @@ Programación de interfaz de usuario
 
 ### Estilo: código móvil
 
-Un elemento de datos se transforman dinámicamente en un componente de procesamiento de datos
+Un elemento de datos se transforma dinámicamente en un componente de procesamiento de datos
 
 Componentes: puerto de ejecución, maneja la recepción del código y del estado, compilador de código / intérprete
 
@@ -723,14 +723,14 @@ Invariantes del estilo:
 * Publicadores no conocen los efectos de los eventos
 * No se asume cómo se procesará la respuesta a eventos
 
-Ventajas: reuso de componentes, evolución del sisttema (desarrollo y ejecución)
+Ventajas: reuso de componentes, evolución del sistema (desarrollo y ejecución)
 
 Desventajas:
 * Estructura de sistema no es intuitiva
 * Componentes no permiten control del sistema
 * No hay conocimiento de la respuesta de los componentes al evento, ni del orden de las respuestas
 
-Publisher - suscriber:
+Publisher - subscriber:
 
 * Subscriptores se registran / de-registran para recibir mensajes específicos o contenido específico
 * Publicadores difunden mensajes a subscritores de manera asíncrona
@@ -740,7 +740,7 @@ Publisher - suscriber:
     * Protocolo de red
     * Conectores especializados para subscripción basada en contenido
 * Elementos de datos: subscripciones, notificaciones, información publicada
-* Altamente eficiente para diseminación de contenido en una dirección con omponentes de muy bajo acoplamiento
+* Altamente eficiente para diseminación de contenido en una dirección con componentes de muy bajo acoplamiento
 
 ![Publisher Subscriber](Imagenes/3PublisherSubscriber.png "Publisher Subscriber")
 
@@ -754,7 +754,7 @@ Basada en eventos
 * Componentes: generadores y/o consumidores de eventos independientes y concurrentes
 * Conectores: buses de eventos
 * Elementos de datos: datos enviado sobre el bus
-* Topología: los comopnentes se comuncan mediante los buses de eventos, no directamente unos con otros
+* Topología: los componentes se comunican mediante los buses de eventos, no directamente unos con otros
 * Variaciones: 
     * Push: los componentes reciben los datos de los buses (son empujados hacia ellos)
     * Pull: los componentes sacan los datos de los buses (tiran de ellos)
@@ -770,14 +770,14 @@ Componentes:
 * Peers: Componentes independientes tienen un estado propio y controlan su hilo de ejecución
 
 Conectores:
-* Protocoloes de red (a veces ad-hoc)
+* Protocolos de red (a veces ad-hoc)
 
 Elementos de datos:
 * Mensajes de red
 
 Topología:
 * La red puede tener conexiones redundantes entre los peers
-* Puede varias arbitrariamente en tiempos de ejecución
+* Puede variar arbitrariamente en tiempos de ejecución
 
 Computación descentralizada:
 * Flujo de control y recursos están distribuidos entre pares
@@ -804,7 +804,7 @@ Computación descentralizada:
 | Pizarra | Programas independientes se comunican únicamente a través de un repositorio global | Los cálculos usan/cambian datos compartidos. El orden de procesamiento se definen on runtime, según datos | Programa acede a partes independientes de datos. La interfaz de datos pueden cambiar. | Escalabilidad, modificabilidad |
 | Basado en reglas | Usar hechos/reglas de una KB para responder una consulta |  Los datos y preguntas del problema se pueden modelar como reglas de inferencia simples | El número de reglas es grande. Hay interacción entre reglas. Requieren gran performance | Escalabilidad, modificabilidad, performance (-) |
 | Intérprete | Se enfoca en la interpretación dinámica de comnandos explícitos |
-| Intérprete | El intérprewte parsea y ejecuta un stream de entrada actualiza su estado | Se requiere conducta dinámica y mucha personalizacióñ de usuario | Se requiere alto performance | Portabilidad, modificabilidad, performance (-) |
+| Intérprete | El intérprewte parsea y ejecuta un stream de entrada actualiza su estado | Se requiere conducta dinámica y mucha personalización de usuario | Se requiere alto performance | Portabilidad, modificabilidad, performance (-) |
 | Código móvil | Se mueve el códgigo a un host que lo ejecuta | Es más eficiente mover el proceso cerca de los datos que al revés. Se customiza código local con código local con código externo, dinámicamente | No se puede garantizar las seguridades del código móvil o tiene acceso restringido. Se reequiere fuerte control de versiones | Modificabilidad, estensibilidad, performance |
 | Invocación implícita | Se cracteriza por llamadas indirectas e implícitas, tales como, respuestas a notificaciones o eventos |
 | Publisher - subscriber | Un publicador difunde mensajes a subscriptores | Componentes débilmente acoplados. Los datos de subscripción son pequeños y fáciles de transportar | No hay middleware para soportar muchos datos | Escalabilidad, flexibilidad, performance |
