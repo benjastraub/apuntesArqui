@@ -856,7 +856,7 @@ Conector != Componente
 * Conector: mecanismos de interacción abstractos independientes de la aplicación
 
 Conector
-* Permite abstrar reglas d einteracción complejas, parametrizarllas, localizarlas, erusarlas, modificarlas, etc. 
+* Permite abstraer reglas de interacción complejas, parametrizarlas, localizarlas, reusarlas, modificarlas, etc. 
 
 ## Roles de conectores
 
@@ -872,12 +872,12 @@ Facilitación
 
 Permite
 * Diferentes mecanismos de comunicación
-* Restricciones en la dirección y estructudra de lacomunicación
+* Restricciones en la dirección y estructura de la comunicación
 * Restricciones de la calidad del servicio
 
 Separa la comunicación del procesamiento
 
-Influencia caracrísticas no funcionales del sistema
+Influencia características no funcionales del sistema
 * Performance
 * Escalabilidad
 * Seguridad
@@ -895,7 +895,7 @@ Son ortogonales a la comunicación, conversión y facilitación
 
 ## Conectores como conversores
 
-Permiten la interaccióñ de comopnentes diferentes desarrollados independientemente
+Permiten la interacción de componentes diferentes desarrollados independientemente
 * Adaptadores, wrappers
 
 Diferencias basadas en la interacción
@@ -907,7 +907,7 @@ Diferencias basadas en la interacción
 ## Conectores como facilitadores
 
 Permiten interacción entre componentes que buscan interoperar:
-* Interoperar: componentes independientes interacrúan y colaboran para proveer una funcionalidad conjunta
+* Interoperar: componentes independientes interactúan y colaboran para proveer una funcionalidad conjunta
 * Integración: componentes independientes se amalgaman de manera de convertirse en una nueva unidad funcional
 
 Definen el acceso a la información compartida
@@ -960,7 +960,7 @@ Comunicación de servicios
 * Otorga el control a los componentes para procesar el mensaje
 
 Coordinación de servicios
-* Regula el control de lfujo entre los componentes (flujo es gatillado por un evento)
+* Regula el control de flujo entre los componentes (flujo es gatillado por un evento)
 
 ## Patrón de diseño: observador
 
@@ -1026,7 +1026,7 @@ Conector
 | Cardinalidad | Binaria |  |
 | Cardinalidad | N-aria | Multi emisor, multi receptor, multi emicsor / receptor |
 
-Utilizados para realizr transferencia de grandes cantidades de datos entre procesos autónomos
+Utilizados para realizar transferencia de grandes cantidades de datos entre procesos autónomos
 
 Ejemplos:
 * Sockets, TCP/UDP
@@ -1075,11 +1075,11 @@ Problema:
 * Asegurar la secuencia correcta de interacciones o la secuencia de intercambio de mensajes entre los procesos
 * Coordinar el acceso a recursos compartidos por los procesos
 
-Semáforo es una variable o tipo abstreacto de datos que permite controlar el acceso a un recurso compartido
+Semáforo es una variable o tipo abstracto de datos que permite controlar el acceso a un recurso compartido
 * Contadores: número de recusos disponibles
 * Binarios: lock o mutexes
 
-Monitor es u objeto o módulo que garantiza la seguridad de uno o vareios threads, puesto que sus métodos se ejecutan con exclusión mutua. A lo más un thread puede ejecutar sus métodos en deteerminado tiempo.
+Monitor es un objeto o módulo que garantiza la seguridad de uno o varios threads, puesto que sus métodos se ejecutan con exclusión mutua. A lo más un thread puede ejecutar sus métodos en un determinado tiempo.
 
 ### Seguridad
 
@@ -1143,15 +1143,15 @@ No todos los conectores pueden componerese
 
 ## Modelo y meta modelo
 
-Modelo: representacióñ abstracta de un sistema
+Modelo: representación abstracta de un sistema
 
 Meta modelo
 * Modelos de modelos (varios niveles de abstracción)
-* Permiten definir lenguajes de modelacuión que a su vez describen sistemas de software
+* Permiten definir lenguajes de modelación que a su vez describen sistemas de software
 
 ## Architecture Description Language (ADL)
 
-Lengua de modelacuión específicamente diseñado para describir software o arquitecturas
+Lenguaje de modelación específicamente diseñado para describir software o arquitecturas
 * Representación formal (textual, gráfica)
 * Legible por humanos y máquinas
 * Analizable sobre sus propiedades arquitectónicas
@@ -1160,14 +1160,14 @@ Lengua de modelacuión específicamente diseñado para describir software o arqu
 Conceptos principales
 * Componentes: especificación funcional o no funcional de los elementos y sus interfaces
 * Conectores
-* Configuraciones arquitectónicas:m edscribe la estructura arquitectónica indicando como se conectan componentes y conectores
+* Configuraciones arquitectónicas: describe la estructura arquitectónica indicando como se conectan componentes y conectores
 
 ## UML: MOF (Meta object family)
 
 ![Imagen MOF](Imagenes/5MOF.png "MOF")
 
 Infraestructura UML
-* Define elementos usados en el meta modeo de UML y en la superestructura
+* Define elementos usados en el meta modelo de UML y en la superestructura
 
 Superestructura UML
 * Define el meta modelo de UML
@@ -1176,9 +1176,9 @@ Superestructura UML
 
 ## Asociación entre clases
 
-Una asociación es una relacióñ entre dos clases que indica alguna conexión significativa entre ellos
+Una asociación es una relación entre dos clases que indica alguna conexión significativa entre ellos
 
-La sociación puede ser de varios tipos:
+La asociación puede ser de varios tipos:
 * Herencia
 * Composición
 * Etiquetada
@@ -1188,11 +1188,11 @@ La sociación puede ser de varios tipos:
 ## Extendiendo UML
 
 Extensión dura
-* Externsión del meta modelo del lenguaje: especificar un nuevo lenguaje UML
+* Extensión del meta modelo del lenguaje: especificar un nuevo lenguaje UML
 
 Extensión blanda
 * Definición de un perfil
-    * Conjunto de estereotipos, definiciones de tagd y restricciones en elementos UML existentes
+    * Conjunto de estereotipos, definiciones de tags y restricciones en elementos UML existentes
     * Añaden semántica adicional a un dominio específico
 
 ## Asociaciones adicionales
@@ -1202,10 +1202,10 @@ Extensión blanda
 
 Las decisiones arquitectónicas se basan en casos de uso y escenarios del sistema
 
-Son la base de las otras vistas y sriven para validarlas
+Son la base de las otras vistas y sirven para validarlas
 
 Vista lógica
-* Abstraccióñ del sistema: sistema de clases y objetos
+* Abstracción del sistema: sistema de clases y objetos
 * Diagrama de clase, secuencia y colaboración
 
 Vista de desarrollo
@@ -1217,7 +1217,7 @@ Vista de proceso
 * Diagramas de actividad
 
 Vista física
-* Cómo se instala el sistema y cómo se ejcuta (en una red de computadores)
+* Cómo se instala el sistema y cómo se ejecuta (en una red de computadores)
 * Diagramas de despliegue
 
 # Clase 6 - Escalabilidad
@@ -1237,7 +1237,7 @@ Heterogeneidad
 * Capacidad del software de estar formado por múltiples partes o funciones en múltiples y dispares ambientes computacionales
 * Interna o externa
 
-Portabilidad: capacidad del software para ejecutarse en múltiples plataformas (Hw/Sw) con modificaciones mínimas y sin degradación de sus caractrerísticas funcionales y no funcionales
+Portabilidad: capacidad del software para ejecutarse en múltiples plataformas (Hw/Sw) con modificaciones mínimas y sin degradación de sus características funcionales y no funcionales
 
 Escalabilidadd Horizontal (scale out)
 * Añadir más computadores
@@ -1306,7 +1306,7 @@ Diferenciar entre dependencias directas e indirectas (y asíncronas)
 
 No poner funcionalidad de la aplicación en los conectores
 
-Aprovechar conectores explícitos para ecalabilidad de datos
+Aprovechar conectores explícitos para escalabilidad de datos
 * Cache, hoarding, pre-fetching, buffering
 
 ## Configuraciones
@@ -1335,10 +1335,10 @@ Particionar los datos de manera que tenga sentido para una aplicación (Ej: por 
 
 * Partición horizontal (shard)
     * Las filas de una DB (pueden ser varias tablas)
-    * Unshard pueed sitribuirse en varias máquinas
+    * Unshard puede distribuirse en varias máquinas
 
 Ventajas
-* Tabls ppequeñas (pocas tuplas -> búsquedas más rápidas)
+* Tablas pequeñas (pocas tuplas -> búsquedas más rápidas)
 * Distribuiídas en varias máquinas (tiempo de búsqueda se divide)
 
 Cuidado: un buen shard no requiere compartir datos
