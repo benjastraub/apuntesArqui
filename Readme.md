@@ -1247,10 +1247,6 @@ Escalabilidad vertical (scale up)
 * Mejorar los computadores existentes (CPU, RAM, HDD)
 * Virtualización
 
-## Diagramas de sistemas
-
-PONER DIAGRAMAS
-
 ## El problema de la escalabilidad
 
 "Escalar es como reemplazar todos los componentes de un auto mientras se conduce a 100mph" Scaling Instagram, Mike Krieger
