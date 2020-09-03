@@ -1393,3 +1393,117 @@ Soluciones
 * Javascript y CSS deben ser externos
 * Hacer Ajax cacheable
 * Minimizar los Iframes, cookies, ...
+
+# Clase 6 continuación - Escalabilidad
+
+## Servicios y opciones de Amazon
+
+* Database
+  * RDS
+  * DynamoDB
+  * ElastiCache
+  * Neptune
+  * Amazon Redshift
+* Storage
+  * S3
+  * EFS
+  * Glacier
+  * Storage Gateway
+* Compute
+  * EC2
+  * Lightsail
+  * Elsatic Container Service
+  * EKS
+  * Lambda
+  * Batcj
+  * Elastic Beanstalk
+
+## Ejemplos de servicios para mejorar la escalabilidad
+
+Map Reduce
+![Imagen Map Reduce](Imagenes/6MapReduce.png "Map Reduce")
+
+Modelación de Bases de datos (sharding, particiones, master/slave, raid, ...)
+
+![Imagen Implementacion BDD](Imagenes/6ImplementacionBDD.png "Implementacion BDD")
+
+En la imagen anterior, la caja azul representa el cache. ¿Cómo funciona?
+
+![Imagen Cache](Imagenes/6Cache.png "Cache")
+
+Configuración ~~Master Slave~~ Lider Seguidor
+
+![Imagen Lider Seguidor](Imagenes/6LiderSeguidor.png "Lider Segiudor")
+
+Sharding
+
+![Imagen Sharding](Imagenes/6Sharding.png "Sharding")
+
+Partitioning
+
+![Imagen Partitioning](Imagenes/6Partitioning.png "Partitioning")
+
+## Posibles problemas (costos)
+
+* Añadir nuevas features se vuelve más complejo
+* El sistema se vuelve más complejo
+* El código se puede volver menos testeable
+* Identificar y corregir defectos/bugs se vuelve más complejo
+
+## Ejemlpo de escalabilidad - Google
+
+La tarea ordenar 1 PB = 1.000 TB = 1.000.000 GB
+
+Ordenar 10 Trillones (TB) de registros de 100 bytes
+* 6 horas, 2 minutos
+* 4.000 computadores
+* Replicado 3 veces en 48.000 discos
+
+Arquitectura:
+* Linux
+* Python, Java, C++
+* +200 GFS clusters
+  * Un clusster: 1.000 a 5.000 máquinas
+    * Dual Core, GB ethernet, 4-8 GB RAM
+    * Tasa de lectura/escritura 40 GB/s
+* 6.000 aplicaciones MapReduce
+* BigTable almacena billones de URLs, cientos de TB de imagen satelital, preferencias de cientos de millones de usuarios
+
+El stack:
+* Prodcutos: search, advertising, email, maps, video, chat, blogger
+* Infraestructura de sistema distribuído: Google File System, Map Reduce, BigTable
+* Plataforma: máquinas baratas en diferentes data centers
+
+Google File System
+* Sistema de archivos masivos, estructurado, distribuído
+  * Alta confiabilidad entre data centers
+  * Miles de nodos en red
+  * Alto ancho de banda R/W
+  * Bloques de datos en GBs
+  * Operaciones: create, delete, open, close, read, write, snapshot, append
+
+![Imagen Google File System](Imagenes/6GFS.png "GFS")
+
+Big Table:
+* Más reads que writes
+* Fallas en componentes son comunes
+* Discos baratos
+* Mecanismos de recuperación de datos simplificados
+  * row, col, timestamp
+  * Búsqueda de valores (key, value)
+  * No hay operadores relacionales
+  * Números de columnas variables
+  * Tipo de datos diferentes para cada columna
+* Es un mecanismo de hash distribuído construido sobre GFS. No soporta SQL, sino búsquedas por key
+* Las DBs comerciales no escalan a este nivel y no funcionan sobre miles de máquinas
+* Cada dato es guardado en una celda que se accede usando una key de tos, columna o timestamp
+* Cada fila se guarda en una o más tablets
+* Una tablet es una secuencia de bloque de 64KB en un formato llamado SSTable
+* Master server:
+  * Asigna tablets a servidores Tablet. Siguen la pista de la ubicación de las tablets y las redistribuyen si es necesario
+* Tablet server:
+  * Procesa requests de lectura/escritura para tablets
+  * Divide tablets grandes (100MB - 200MB)
+  * Si falla, 100 tablets server toman una nueva tablet
+* Chubby Lock Servers:
+  * Operaciones tales como abrir una tablet para escritura, árbitro de master y ACL requieren exclusión mutua.
