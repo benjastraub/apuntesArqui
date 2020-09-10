@@ -1507,3 +1507,113 @@ Big Table:
   * Si falla, 100 tablets server toman una nueva tablet
 * Chubby Lock Servers:
   * Operaciones tales como abrir una tablet para escritura, árbitro de master y ACL requieren exclusión mutua.
+
+# Clase 7 - Performance
+
+Es un atributo de calidad observable cuando el sistema está en ejeución (dinámica)
+
+Propiedadses no observables en el tiempo de ejecución (estática)
+* Modificabilidad, portabilidad, reusabilidad, itegrabilidad, testeabilidad
+
+Capacidad del software para dar una respuesta
+* Depende de la comunicación e interacción entre componentes del sistema
+
+¿Cómm medir performance?
+
+* Experimental: mediciones de request, transacciones, etc
+* Teórico: modelo etocástico de colas del sistema basado en escenarios de carga de trbajo.
+    * Técnica analítica: tasa de llegada y distribución de solicitudes de servicios, tiempos de procesamiento, tamaños de colas y latencia
+    * Simulación
+
+## Estrategias para mejorar el desempeño
+
+Considerar el hardware
+
+Mejoras estructurales
+* Bases de datos
+  * Indexar, normalizar vs desnormalizar, SQL vs NoSQL
+
+Usar caches
+
+Haz menos
+* Evitar correr código innecesario
+* Evita instanciar objetos innecesarios
+* Evita abstracciones innecesarias
+* Conectores más sencillos
+* Toma el camino más corto posible (reduce el stack)
+* Delega tareas (jobs, crons, delegar ejecución de código a un tercero)
+
+Considerar un optimizador automático de código
+* JVM
+
+## Hardware
+
+Lectura de memoria
+* CAS Latency: tiempo de transferencia entre el momento en que el controlador de memoria indica al módulo de memoria acceder a una posición de la RAM y el momento en que la data está disponible (ha sido leída)
+
+![Tabla CAS](Imagenes/7cas.png "CAS")
+
+Operaciones de punto flotante (lentas) VS Operaciones con enteros
+* Depende del tipo de operaciones, de la arquitectura del CPU, etc
+
+Disco duro
+
+CPU (reloj)
+
+RAM
+
+Ancho de banda
+* Tráfico de internet: streaming video/audio, protocolos codiciosos (bit torrent), etc
+* Cloud computing
+  * Replicación y redundancia agrrega los retrasos en las lecturas/escrituras en disco
+  * Aumenta el consumo de ancho de banda
+  * Peor si es sobre internet
+
+## Cache
+
+En lugar de descargar contenido desde un servidor remoto, los navegadores lo descargan de un servidor geográficamente cercano o conectado por un enlace de red rápida
+
+* Almacenamiento en caché del navegador
+  * Copias cercanas y rápidas, pero descargas por un solo usuario
+* Almacenamiento en caché de una red (proxy cache, interception cache)
+  * Copias cercanas por cada usuario que decargó el contenido (ahorra ancho de banda)
+* Almacenamiento en caché de una red de distribución de contenido (CDN, reverse proxy, gateway cache. surrogate cache)
+  * Usado po empresas (webmasters) que quieren que su contenido sea accesible rápidamente en todas partres
+  * Akami
+
+## ¿Cómo manejar los caches de la web?
+
+Objetivo del cache:
+* Reducir latencia
+* Reducir táfico de red
+
+Efectos secundarios
+* Ocultan el tráfico real de un sitio web
+* Sirven contenido añejo
+
+## Reglas de los cache
+1. Si el response Header dice No-Cache, no se cachea
+2. Si el request es autenticado o seguro (HTTPS), no se cachea
+3. Una representación cacheada es fresca (se sirve del cache) si:
+     * Tiene fecha de expiración o header Age-Control < actual
+     * El cache ha visto la representación hace poco y fue modificada hace tiempo (Last-Modified)
+4. Si una representación es añeja (stale), se pedirá al servidor de origen validarla
+5. Bajo ciertas circunstancias (offline) se servirá la respuesta añeja sin chequear con el servidor de origen.
+
+## Diseñando sitios web sensibles al cache
+
+Usar URLs de manera consistente
+
+Usar librerías de imágenes comunes
+
+Marcar imágenes y páginas que no cambian a menudo con Cache-control: max-age y un valor grande
+
+Ajustar el valor de max-age o Expires apropiado para los otros recursos
+
+No actualice archivos de manera innecesaria (falso Las-Modified)
+
+Usar cookies cuando sea necesario (son difíciles de cachear, sólo usar en páginas dinámicas)
+
+Minimice SSL
+
+Validar páginas con redbot.org
