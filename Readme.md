@@ -1619,3 +1619,332 @@ Usar cookies cuando sea necesario (son difíciles de cachear, sólo usar en pág
 Minimice SSL
 
 Validar páginas con redbot.org
+
+# Clase 8 - Seguridad
+
+Meta: proteger recursos contra amenazas. Corrupción, accesos no autoirzados, denegación de acesos autorizados, software malicioso.
+
+Medidas:
+* Limitar físicamente el acceso a usuarios confiables
+* Mecanismos de hardware
+* Mecanismos de sistema operativos que impone reglas a programas no confiables
+* Antivirus
+* Técnicas de aseguramiento de código
+
+## Metas de seguridad
+
+![Metas de Seguridad](Imagenes/8MetasSeguridad.png "Metas de Seguridad")
+
+## Arquitectura de seguridad
+
+Especifica los mecanismos de seguridad a ser parte de la arquitectura de software
+
+* Subsistemas: servidores web, servidores de aplocación, DBMS, directorios, aplicaciones web y aplicaciones legadas
+* Conectores entre subsistemas: llamadas a funciones remotas o locales, protocolos (SSL, HTTPS, LDAP)
+* Mecanismos específicos: autenticación y autorización, encriptación, auditoría, manejo de bitácoras, monitoreo, detección de intrusos, registros, backup, recuperación ante fallas.
+
+## Malware o softweare malicioso
+
+Cualquier programa que va contra los inntereses del usuario
+
+**Backdoor**: Acceso ilimitado al equipo
+
+**Denial of servise (DoS)**: infectar una cantidad enorme de máquinas para conectarse simultáneamente a un servidor, sobrecargarlo y hacerlo caer
+
+**Distributed Denial of Service (DDoS)**: idéntico al anterior pero el ataque proviene de múltiples fuentes
+
+**Vandalismo**: cambiar un sitio web
+
+**Robo de recursos**: robar recursos de computación y redes
+
+**Robo de información**
+
+## Tipos de malware
+
+**Virus**
+* Programa que se auto-replica con malas intenciones
+* Deben ejecutarse (iniciarse) por un humano
+* Polimórficos: encriptan el código con una llave (firma) random y lo desencriptan al momento de ejecutarse
+* Cada copia parte con una seed diferetne para el random
+* Se puede almacenar (antivirus) las llaves o firmas conocidas de los virus
+* Metamórficos: cambian el código completamente al copiarse
+* Pueden interceptar lecturas al *filesystem* por parte de los antivirus y simular que no existen
+
+**Worms**
+* Similares a los viruses pero no necesitan ser ejecutadas por personas, explotan vulnerabilidad del S.O. o de aplicaciones
+* Se propagan por la web
+* Worm kleptográfico: usan una llave para encriptar infroamcióñ que roban del usuario
+
+**Backdoor**
+* Crea un canal de acceso encubierto para conectarse, controlar, espiar y manipular la máquina de la víctima
+
+**Troyanos**
+* Incrustan código malicioso en una aplicación aparentemente inocente
+
+**Adware**
+* Programa que fuerza llamadas a publicidad (advertising) no intencional
+* Objetivo: perfilar al usuario (hábitos de browsing y compra)
+
+**Sticky software**
+* Impiden al usuario desinstalarlo de manera simple
+
+**COMPLETAR**
+## Otros errores
+
+Contraseñas fáciles de identificar
+
+Compartir información privada en servicios públicos
+
+Listar información de directorios web
+
+Versiones sedactualizadas de software de terceros
+
+Servicios innecesarios en el servidor
+
+**COMPLETAR**
+## Tipos de ataque
+
+# Clase 9 - Integración
+
+## Motivación
+
+***Heterogenidad**
+* Diferentes formatos, semántica de los datos, lenguajes y plataformas de Software y Hardware
+* Aplicaciones empresariales: ERP (Enterprise Resource Planning), SAP, PDM (Product Data Managment), SCM (Software Configuration Managment), B2B, etc
+
+**Aplicaciones de integración y middleware (AIM)**
+* $6.400 millones en el 2005
+* $ 11.000 millones en el 2007
+* $28.500 millones en el 2017
+* Pérdidas por mala iontegración (CAD) $1000 millones (2002)
+* Diferentes empresas, data operacional, data no estructurada, AIM incompatible
+
+## Integración
+
+Esfuerzo requerido para integrar una aplicación en un contexto mayor
+
+A nivel de datos(DB accesibles a otras aplicaciones)
+* Flexible, simple y peligrosa
+
+API (Application Programming Interface)
+* Funciones (parametrizadas) que controlan el acceso a los datos. Garantizan integridad de datos y reglas de negocio
+* Compleja, costosas y segura
+
+Middleware
+* Software especializado en integración
+
+![Niveles de Integracion](Imagenes/9NivelesIntegracion.png "Niveles de Integracion")
+
+## Deployment
+
+Deployment es el proceso de montar el sistema en el hardware
+* Cambiar en tiempo de ejecución se llama migración o redeployment
+* En las presentaciones vimos algunas formas de lelvar a cabo este proceso (BlueGreen, CanaryRelease, DarkLaunching, ProductionInmuneSystem)
+
+Actualmente los grandes sistemas evolucionan continuamente
+
+Un sistema puede estar en varios hosts
+
+Dependiendo de la configuración y las necesidades de los componentes del sistema, estos pueden compartir:
+* Hardware
+* Network
+* Otros dispositivos
+* Datos
+
+Proceso
+* Antes: mediante CD, todo el sistema
+* Ahora: instalación integral del sistema, con actualizaciones frecuentes
+
+## Deploy automatización
+Buenas prácticas
+* Utilizar un repositorio
+* Automatización del Build
+* Tests automáticos al crear el build
+* Todos hacen comit siarios
+* Cada commit debe provocar un build
+* Mantener el build rápido
+* Testyear en un clon del ambiente de producción
+* Facilitar el acceso a a las versiones
+* Visibilidad de los resultados del build
+* Automatizar el deployment
+## Deploy herramientas deployment
+
+Redución del tiempo de entrega
+
+Reducción de errores
+
+Repetible (se configura una vez, se usa muchas)
+
+Cualquier miembro del equipo puede realizar el deployment
+
+Mayor tiempo utilizado en desarrollar
+
+Realizar deployment a un nuevo sistema resulta más sencillo
+
+Deploys más frecuentes
+
+Git hook
+* Configurar un servidor para ejecutar un script tras actualizarse el código
+
+Capistrano
+* Permite añadir la configuración al repositorio el mismo
+* Cualquier miembro del equipo puede hacer deploy con "cap deploy"
+* Fácil de configurar
+
+Puppet
+* Una de las herramientas más antiguas, maduras y estables
+* Basado en Ruby, pero usa DSL parecido a JSON
+* Tiene una estructura cliente servidor
+* Tiene una interfaz madura y corre en casi cualquier SO
+* CONS: no está diseñado para ser simple y gracias al uso del DSL, el códdigo crece muy rápido en poroyectos simples
+
+Chef
+* Basado en Ruby y Erlang, Ruby DSL para la declaració de recetas
+* Tiene una estructura cliente-servidor
+* Riene una interfaz madura y corre en casi cualquier sistema operativo
+* Muy similar a puppet
+* Gran cantidad de recetas de módulos creadas por la comunidad
+* CONS: difícil de aprender si se tiene poco manejo de Ruby y programación procedural
+
+Ansible
+* “Ansible is a radically simple IT automation system. It handles configuration-management, application deployment, cloud provisioning, ad-hoc task-execution, and multinode orchestration - including trivializing things like zero downtime rolling updates with load balancers...”
+* Desarrollada en python, pero soporta extensión de módulos en cualquier lenguaje
+
+## Deploy automatización
+* Es más fácil de detectar errores más temprano en el ciclo de desarrollo
+* Testing automático
+* Evita errores de último minuti
+* Al haber poco código entre cada build es más fácil de arreglar entre cada build, es más fácil de arreglar en caso de fallas
+* Siempre hay builds disponibles para release/testing/demo
+
+Continuous integration:
+* El proceso de realizar builds automáticamente y correr tests en el software, de manera regular
+
+Continuous delivery
+* Si los tests corren constantemente y hay confianza en ellos, entonces es posible hacer releases en cualquier momento
+
+Continuous deployment
+* consiste en entregar los releases al cliente a penas el software esté listo, como en SaaS
+
+## Deploy versonamiento
+No hay un estándar universal
+
+Recomendado el formato X.Y.Z
+* X: major number. Sólo debe aumentar cuando la nueva versión se hace incompatible con anteriores
+* Y: minor number. Aumenta cuando se agregan funcionalidades retro compatibles
+* Z: patch number. Aumenta cuando se corrigen bugs de versiones anteriores
+
+Además se recomienda agregar un último number que tebga relación con el build del código
+
+## Deploy estrategia Netflix
+
+![Estrategia](Imagenes/9Estrategia.png "Estrategia")
+
+## Deploy estrategias
+Canary release
+* Minimiza el impacto de una falla
+* No hay mejor tester que los mismos usuarios
+* Desafíos
+  * Manejar múltiples versiones de software
+  * Integrar diariamente
+  * Enfoque ágil
+  * Monitoreo y control
+  * A/B testing
+
+![Load Balancer](Imagenes/9LoadBalancer.png "Load Balancer")
+
+## Deploy estrategias: Blue/Green Deployment
+Stateless
+* Cookies, archivos, cache
+* Servicios externos
+
+Databse migrations
+* BD compartida
+* Cambios no afecten al servidor online
+
+Non-Destructive Migrations
+* Eliminación de tabla
+* Verificar que no afecte a la aplicación
+* Lanazamientos chicos y frecuentes
+
+Dark Launches
+* Sin cambios en el UI
+* Observar el comportamiento del servidor
+
+## Middleware
+
+Básicamente se divide en integración y aplicación
+
+## Middleware a nivel de la capa de transporte: CORBA
+
+Common Object Request Broker Architecture
+
+Servidor implementa una interfaz especificada en IDL (Interface Description Language), describiendo métodos, parámetros y tipos de retorno válidos
+
+El cliente serializa su solicitud, la envía al servidor y queda bloqueado esperando la respuesta
+
+El servidor deserializa la solicitud, procesa, serializa su respuesta y la envíá de vuelta
+
+## Middleware orientado a mensajes (MOM)
+
+El middleware es un servidor de colas entre clientes que toman los roles de sender y receiver
+
+El sender no se queda bloqueado esperando respuesta (send and forget)
+
+Tiene alta escalabilidad, disponibilidad y tolerancia a fallos lograda vía replicación del servidor MOM
+
+Limitación: el formato de datos debe ser conocido
+
+## Middleware basado en publisher/subscriber
+
+MOM: mensajes 1 a 1
+
+Publisher subscriber: mensajes 1-N, N-N, N-1
+
+Asíncrono, send and forget
+
+## Middleware basado en brokers
+
+El broker es un intermediario entre los senders y lso receivers
+
+Dos responsabilidades
+* Ruteo: el broker conoce a qué receptor debe despachar el mensaje recibido
+* Transformación: el broker encapsula reglas de transformación de mensajes
+
+Escala (disponibilidad, tolerancaia a fallos) muy bien vía replicación
+
+No hay límite en el dormato de datos
+
+## Middleware basado en Business Process Orchestrarion
+
+Un motor de procesos de negocios es un broker que además:
+* Maneja estado (persistencia)
+* Vincular los pasos de una lógica de procesos de negocio con sistemas de software usando diferentes tipos de conectividad (http, colas de mensajes, archivos -> puertos)
+* Define los pasos de control de flujo (no solo in-out, sino bucles/ciclos, ejecución condicional, etc)
+  * Se convierte en punto único de falla
+  * Encapsula toda la complejidad del control de flujo en cada proceso de negocio
+  * Como maneja persistencia no es trivial hacerlo escalar
+
+## Problemas con el middleware
+
+Objetivo de los vendedores de middleware
+* Segmentar mercados y mantener clientes cautivos
+* Guerra del middleware
+
+La integración de grano fino...
+* Necesaria para aplicaciones específicas (rendimiento)
+
+... es diferente de la integración de grano grande
+* Sistemas débnilmente acoplados a niveles de trancisiones
+
+Además se requiere definir criterios de calidad de la conversación entre cliente/middleware/servidor
+* Seguridad, transacciones, manejos de recursos
+
+## SOC (y SOA) son una generalización abierta de CORBA y los brokers
+
+SOC (Service Oriented Computing)
+* Paradigma que usa el servicio como idea básica para permitir el desarrollo de aplicaciones interoperables , masivamente distribuídas, capaces de evolucionar, de manera rápida y a bajo costo
+* Un servicio es un mecanismo que permite acceso a una o más funcionalidades de negocios bien definidas y bajo el control de diferentes propietarios
+
+SOA (Service Oriented Architecture)
+* Estilo arquitectónico que sigue la línea de SOC y permite la viibilidad de los servicios y su descripción, la descripción de los efectos del servicio, su ejecución, políticas e interacción
