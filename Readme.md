@@ -1688,7 +1688,30 @@ Cualquier programa que va contra los inntereses del usuario
 **Sticky software**
 * Impiden al usuario desinstalarlo de manera simple
 
-**COMPLETAR**
+## Vulnerabilidades por protocolos de comunicación
+Spoofing:
+* IP
+* UDP
+* Conexión TCP
+
+Ataques:
+* TCP sequence number
+* Internet routing
+* ICMP redirect
+* PoD (ping of death)
+* ARP
+* TCP SYN Flood
+* IP fragmentation
+* UDP Port DoS (Denial of Service)
+* Random port scanning
+* Packet sniffers (eavesdropping)
+* Connection hijacking
+
+## Vulnerabilidades de las aplicaciones web
+"If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization" - Weinberg's Second Law
+
+![Vulnerabilidades en la web](Imagenes/8VulenrabilidadesWeb.png "Vulnerabilidades en la web")
+
 ## Otros errores
 
 Contraseñas fáciles de identificar
@@ -1701,8 +1724,144 @@ Versiones sedactualizadas de software de terceros
 
 Servicios innecesarios en el servidor
 
-**COMPLETAR**
 ## Tipos de ataque
+
+|Application | Attack types | Negative outcome |
+|------------|--------------|------------------|
+| Form fiels: collect data | Bufferoverflow | Crash servers/close business |
+| Customer account | Cookie poisoning | Identity theft/illegal transactions |
+| Online shopping | Hidden fields | eShoplifting |
+| Sloppy code | Backdoors/debug options | Download proprietary database |
+| Text field: collect data | Cross site scripting | eHijacking - Get Account info |
+| Database | Parameter Tampering/SQL injection | Fraud |
+| Backend Apps | Stealth Commanding | Site defacement |
+| Web server | Published vulnerabilities | Crash site |
+| Dront end apps | 3rd party misconfiguration | Admin access |
+| Web server | Forceful browsing | Access Sensitive data |
+
+## Same origin Policy
+
+Política de seguridad para lenguajes que se ejecutan en el lado del browser (ej: javascript)
+
+Los scripts que corren en páginas servidas por un sitio acceden únicamente a los objetos, métodos y propiedades (DOM, cookies) de las páginas originadas en el mismo sitio, pero previenen el acceso a los metodos y propiedades de sitios diferentes
+
+## CORS (Cross Origin Resource Sharing)
+
+HTTP requests a recursos de dominios diferentes al dominio del recurso que hace la llamada
+
+## Social engieneering
+
+El arte de manipular a las personas para que divulguen información cofidencial.
+
+Pretexto: crear un escenario falso, impersonar, etc
+
+Desvío: engañar a alguien de entregar algo a quien no corresponde
+
+Phishing: obtener información privada de manera fraudulenta
+
+Piggybacking: aprovevharse de los permisos de alguien para colarse a continuación
+
+## Phishing
+
+la forma más común es utilizar un email indicando que una cuenta necesita actualización. Obviamente hay que fijarse en la URL: ver si el host esdiferente al que debería ser. Ver si tienen caracteres numéricos sospechosos.
+
+Para evitar esto muschos mails legítimos ya no contienen links (paar forzarte a ir al sitio original)
+
+## Navegación anónima
+
+**Función de los proxys:**
+
+Proteger privacidad:
+* Ocultar la dirección IP del cliente
+* Remover información de los headers HTTP
+* Remover coockies o eliminar las cookies falsas (hay registros)
+* Generar ruido para distorcionar el perfil del usuario
+
+Niveles:
+* Browser
+* Rdes locales
+* Web: proxies anonimizadores
+
+## Otros threats
+
+Autentificación y aplicaciones:
+* Passwords débiles
+* Passwords sniffers
+* Ataques a DNS, SMTP, NFS, Remote Login, X-Windows
+* Finger, whois, echo, ping, traceroute
+* URL y Web spoofing
+* Ataques CGIs
+
+## Firewalls
+
+Provee conectividad segura entre redes
+
+Permite aplicar una plítica de seguridad
+
+Registra tráfico entrante y saliente:
+* Direcciones IP, puertos y usuarios
+
+Filtro de paquetes: bloquea paquetes inválidos (IPs), puede ser router, bridge, host
+
+Aplication proxy: programa (encriptación)
+
+Separar srvicios inteernos (gateways) de externos (DNS, sebservers, etc)
+* DMZ (De-Militarized Zone)
+* Area entre 2 filtradores (interno/externo de paquetes)
+
+![Firewalls](Imagenes/8FireWalls.png "Firewalls")
+
+## ACL (Acess Control list)
+
+Define los permisos (operaciones) asignados a un objeto según el usuario
+
+## Autenticación en la web
+
+API Key:
+* Credenciales: developer key, developer token, token IDm userIDm user key
+
+Username / Password
+
+## Json Web Tokern (JWT)
+
+Almacenamiento deinformación de manera stateless
+
+Compacto
+
+URL - safe
+
+Pueden estar autenticadas y encriptadas
+
+Pueden caducar(fecha de expiración en la encriptación)
+
+## Seguridad
+
+Protect the Brand Your Customers Trust
+
+Know Your Business and Support it with Secure Solutions
+
+Understand the Technology of the Software
+
+Ensure Compliance to Governance, Regulations, and
+Privacy
+
+Know the Basic Tenets of Software Security
+
+* confidencialidad, integridad, disponibilidad,
+* autenticación, autorización, “responsabilidad”,
+* configuración de uso, sesiones y excepciones
+
+Ensure the Protection of Sensitive Information
+
+Design Software with Secure Features
+
+Develop Software with Secure Features
+
+Deploy Software with Secure Features
+
+Educate Yourself and Others on How to Build
+
+Secure Software
 
 # Clase 9 - Integración
 
