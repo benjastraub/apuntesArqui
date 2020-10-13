@@ -2107,3 +2107,55 @@ SOC (Service Oriented Computing)
 
 SOA (Service Oriented Architecture)
 * Estilo arquitectónico que sigue la línea de SOC y permite la viibilidad de los servicios y su descripción, la descripción de los efectos del servicio, su ejecución, políticas e interacción
+
+## Paradigmas SOA
+
+## Web services
+
+## WSDL
+
+## Dos visiones
+
+## REST
+
+## Árbol de derivación de REST
+
+## Diseño de rest
+
+## Propiedades de calidad que REST considera
+
+## Propiedades deseables de mantener en la web
+
+## Estilos arquitectónicos que influencian REST
+
+## ¿Que NO es REST?
+
+No es un estandar de APIs web
+
+No son APIs que retornan JSON
+
+No es un estandar para nombrar o formar URI
+* No promueve URIs anidadas ni índices incrementales
+
+No es lo mismo que un CRUD
+
+No está ligada a HTTP
+
+## ¿Qué es un recurso?
+
+## ¿Qué es una representación?
+
+Una fotografía de un recurso en un momento del tiempo en algún formato
+
+Puede ser un texto plano, una imagen, JSON, HTML, YAML, csv, etc.
+
+## Rest es un estilo arquitectónico
+
+## Principios REST
+
+## Esto es importante
+
+## Web client - Web server interaction
+
+## Restricciones de interfaz uniforme
+
