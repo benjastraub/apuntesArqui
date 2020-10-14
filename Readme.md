@@ -2159,3 +2159,94 @@ Puede ser un texto plano, una imagen, JSON, HTML, YAML, csv, etc.
 
 ## Restricciones de interfaz uniforme
 
+
+## Mensajería entre sistemas Pipe and Filter Publisher Subscriber Broker
+
+![Pipe and filter](Imagenes/9PipeAndFilter.png "Pipe and filter")
+
+Comunicación asíncrona: el client envía mensajes a una cola y continúa con sus tareas sin esperar una respuesta. Los mensajes se toman después y se procesan
+
+Calidad del servicio: la cola puede configurarse para garantizar entregas rápidas (no confiable) o lentas (confiable). Puede coordinarse mediante transacciones a DB.
+
+Acoplamiento débil: no existe conexión directa entre clases y servidores
+
+Recomendable: el cliente no requiere respuestas inmediatas ante solicitudes. Resilencia ante red/servidor no confiable
+
+## Pipe and filter
+
+|Atributo de calidad|Ventajas|
+|-------------------|--------|
+
+## Publisher subscriber
+
+Mensajería N a N: un mensaje se envía a varios subscriptores registrados para un tema. Varios editores publican sobre el tema y varios subscriptores escuchan
+
+Calidad de servicio: mensajería confiable/no confiable, punto a punto, broadcast o multicast
+
+Acoplamiento débil: no existe onexión directa entre editores y subscriptores
+
+Recomendable: en aplicaciones asíncronas con mensajería 1-N o N-N
+
+|Atributo de calidad|Ventajas|
+|-------------------|--------|
+
+## Broker
+
+![Broker](Imagenes/9Broker.png "Broker")
+
+Acomplamiento débil: no existe conexión directa entre senders y receivers
+
+Recomendable: cuando los componentes intercambian mensajes que requieren fuerte transformación de datos
+
+|Atributo de calidad|Ventajas|
+|-------------------|--------|
+
+## Eventos: Recordatorio de desacoplamiento
+
+## ESB
+
+Enterprise Service Book
+
+PONER IMAGEN
+
+Es un sistema de mensajería empresarial basado en el intercambio de mensajes XML
+
+Los mensajes pueden ser encaminados de forma inteligente a través de una arquitectura distribuída
+
+Es una aplicación de middleware que provee interoperabilidad entre diferentes protocolos de comunicación
+
+Ejemplo:
+* una compañía puede recibir mensajes desde protocolos antiguos como FTP
+* Un ESB puede tomar los datos desde un servicio FTP, transformarlos en XML y enviarlos a un servicio web para que sean procesados
+
+## ESB principales funcionalidades
+
+Adaptadores de protocolos
+
+Middleware orientado a mensajes
+
+Mensajería basada en XML
+
+Distribución y enrutamiento inteligente
+
+Transfromaciones de mensajes
+
+Tareas y temporizadores
+
+Calidad de servicio
+
+Monitoreo y administración
+
+API extendible
+
+Los ESBs típicamente proveen una multitud de adaptadores como componentes o servicios
+
+Permiten al ESB interactuar fácilmente con los protocolos de comunicación o medios de transporte:
+* HTTP, FTP, POP3, SMP, sistema de archivos
+
+Los adaptadores se configuran editando rchivos de configuración en formato XML
+
+
+
+
+
