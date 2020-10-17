@@ -2110,23 +2110,152 @@ SOA (Service Oriented Architecture)
 
 ## Paradigmas SOA
 
+![Paradigma SOA](Imagenes/9ParadigmaSOA.png "Paradigma SOA")
+
 ## Web services
+
+Es un conjunto de estándares de la W3C
+
+Sistema de software diseñado para permitir interoperabilidad máquina - máquina sobre la red
+
+Tiene una interfaz (operaciones y parámetros) descrita en formato estándar procesable por máquinas: WSDL (XML)
+
+Los mensajes se intercambian siguiendo el estándar SOAP
+
+Los mensajes SOAP típicamente se envían sobre HTTP serializados en XML
+
+![Web Services](Imagenes/9WebServices.png "Web Services")
 
 ## WSDL
 
+Web Services Description Language
+
+Formato XML
+
+Tipos de Datos definidos en XML Schema
+
+Describe:
+* Operaciones y tipos de datos del Web service para ser llamado (input / output)
+* Ubicación del Web Service (URI)
+* Método de envío de mensajes
+
 ## Dos visiones
 
-## REST
+SOA: Service Oriented Architecture
+* Punto central de control, diseño (Arquitectura)
+* Sistemas acoplados
+* Publicar APIs es muy barato (WSDL)
+* Modelo de datos compartido, servicios transparentes
+* Intranets
+
+REST
+* Múltiples partners independientes y autónomos con modelos de datos propios
+* Ingeniería de documentos: modelar las transacciones de modelos de negocios como una serie de intercambios de documentos (representaciones de artefactos)
+* ROAs: mayo esfuerzo pues requiere identificar los recursos y planificar e implementar los nombres de recursos y su manejo
+
+## REST (Representational State Transfer)
+
+Roy Fielding, 2000. Autor principal de HTTP 1.1 (1999) y autor secundario de URI Syntax (1998)
+
+conjunto de restricciones arquitecturales que subyacen a la Web
+
+Estilos arquitectónicos y el diseño de arquitecturas de software basadas en redes
 
 ## Árbol de derivación de REST
 
-## Diseño de rest
+![Arbol de Derivacion](Imagenes/9ArbolDerivacion.png "Arbol de Derivacion")
 
 ## Propiedades de calidad que REST considera
 
+Network Performance
+* Throughtput: tasa de transferencia de datos entre componentes
+* Overhead: seteo de inicio, por cada interacción
+* Bandwidth: throughtput máximo disponible en un enlace de red
+* Bandwidth usable: porción del ancho de banda disponible para la aplicación
+
+Network Efficiency
+* Minimizar el uso de la red (caching, replicar data, operaciones offline, mobile code)
+
+User perceived performance
+* Latencia: tiempo desde el estímulo inicial dado por el usuario hasta la respuesta del sistema
+
+Confiabilidad
+* Grado de confianza en la no falla del sistema
+* Redundancia, evitar puntos únicos de falla, monitoreo
+
+Escalabilidad
+* Crecimiento de componentes o interacciones entre componentes
+* Distribuir sevicios entre componentes, simplificar componentes
+
+Simplicidad
+* Separación de responsabilidades. Conectores genérios
+
+Visibilidad
+* De las interacciones entre componentes
+* Mejora performance vía caching, servicios en capas
+* Mejora confiabilidad vía monitoreo
+* Mejora seguridad vía inspección por mediadores (firewalls)
+
+Portabilidad
+* Incluye mover código
+
+**Modificabilidad:**
+
+Evolución
+* La imnplementación de un componente puede cambiar sin afectar al sistema
+
+Extensabilidad
+* Añadir funcionalidad al sistema dinámicamente (cuando el sistema está deployeado)
+* Reducir acoplamiento entre componentes
+
+Personalización
+* Especializar temporalmente la conducta de un elemento arquitectónico (ej. Para un cliente)
+* Evaluación remota de código de baja demanda
+
+Configurabilidad
+* Modificación post-deployment de componentes o de sus configuraciones
+
+Reusabilidad
+* Componentes, conectores o elementos de datos pueden ser reusados, sin requeir modificaciones, en otras aplicaciones
+* Reducir acoplamiento, interfaces genéricas
+
 ## Propiedades deseables de mantener en la web
 
+Barrera de entrada baja (autores, editores, lectores)
+
+Extensibilidad
+
+Hipermedia distribuida
+
+Escalabilidad masiva y anárquica
+
+Deployment independiente
+
 ## Estilos arquitectónicos que influencian REST
+
+Jerárquicos (módulos en capas)
+* CS: Client Server
+* LCS Layered Client Server
+* CSS Client Stateless Server: no se permite información de estado de la sesión en el sevidor
+* C$SS Client-Cached Statless Server: cache mediador entre cliente y servidor
+* LC$SS Layered Client-Cached Stateless Server: añade proxy y gateway
+
+Replicación
+* RR Repositorio Replicado
+  * Servidores descentralizados en cluster
+  * Cliente: ilusión de que interactúa con un solo servidor
+* $ Cache: la respuesta a una solicitud puede ser usada varias veces
+
+Código móvil
+* VM Virtual Machine: intérprete en un ambiente controlado
+* COD Código baja demanda: un cliente solicita código que se ejecuta localmente
+* LCODC$SS: Layered, Code On Demand, Cient-Cached Stateless Server
+
+Interfaz uniforme entre componentes
+1. Identificar recursos (ej. URI)
+2. Manipular recursos mediante representaciones (ej. HTML)
+3. Mensajes auto-descriptivos (ej. HTTP)
+4. Hypermedia como Motor de Estado de Aplicaciones (HATEOAS)
 
 ## ¿Que NO es REST?
 
@@ -2143,6 +2272,12 @@ No está ligada a HTTP
 
 ## ¿Qué es un recurso?
 
+Abstracción clave de información
+
+Si tiene un nombre, puede ser un recurso
+
+Debe tener una URI como ID
+
 ## ¿Qué es una representación?
 
 Una fotografía de un recurso en un momento del tiempo en algún formato
@@ -2151,14 +2286,114 @@ Puede ser un texto plano, una imagen, JSON, HTML, YAML, csv, etc.
 
 ## Rest es un estilo arquitectónico
 
+![Rest es un estilo arquitectonico](Imagenes/9RestEstiloArquitectonico.png "Rest es un estilo arquitectonico")
+
 ## Principios REST
+
+1. C/S
+2. Capas
+3. Cacheable
+4. Stateless
+5. Code on demand
+6. Recursos identificables
+7. Manipulación mediante representaciones
+8. Mensajes autodescriptivos
+9. Hypermedia como motor de estado de la aplicación
+
+![Principios Rest](Imagenes/9PrincipiosRest.png "Principios Rest")
 
 ## Esto es importante
 
+Interacción Stateless
+* El servidor no almacena información del estado de su convesación con el cliente
+* Cada request del cliente envía toda la información necesaria. El estado de la sesión se mantiene en el cliente
+* El sevidor podría ser stateful, es decir, el estado del lado del servidor puede ser accedido mediante URLs (el servidor mantiene el estado del recurso)
+
+Interfaz uniforme
+* Diferencia a REST de otros enfoques
+
 ## Web client - Web server interaction
+
+![Web Client Server Interaction](Imagenes/9WebClientServerInteraction1.png "Web Client Server Interaction")
+
+![Web Client Server Interaction](Imagenes/9WebClientServerInteraction2.png "Web Client Server Interaction")
 
 ## Restricciones de interfaz uniforme
 
+Los recursos tienen identificadores únicos y opacos
+* URI: http://ejemplo.com/cliente/bar/orden/1
+* Evitar acoplamiento entre clientes y servidores
+  * Opaco: el cliente no debe adivinar la URI
+  * El antipatrón más usado en la web es http://{host}/{service}/{id}
+
+Los recursos son conceptuales (entidades) y se sirven al cliente mediante representaciones 
+* Los formatos de representación pueden negociarse
+* Estándar para formatos: media types o MIME (Multipurpose Internet Mail Extensions)
+* Cliente puede preferir JSON, XML, XHTML en ses orden;
+  * Header: `Accept: application/JSON, application/xml`
+
+Los recursos son autodescriptivos y estándar
+* Las operaciones HTTP tienen semánticas conocidas que afectan o no el estado de los recursos
+* Depende del protocolo. Por ejemplo en HTML:
+
+![HTTP Status Codes](Imagenes/9HTTPStatusCodes.jpg "HTTP Status Codes")
+
+HATEOAS (Hypertext as the Engine of Aplication State)
+* Las representaciones contienen los links necesarios para navegar, descubrir otros recursos y los controles para cambiar su estado
+
+## Malas prácticas
+
+Incluir el método en la URI
+* `http://host.com/servicio/version/recurso?method=get`
+* `http://host.com/servicio/version/get_recurso`
+
+Incluir el formato dle recurso en la URI
+* `http://host.com/servicio/recurso.json`
+
+URIs no opacas (URI-template)
+* `http://host.com/servicio/version/recurso?method=get`
+
+## Niveles de madurez de REST
+
+Nivel 0 - No es REST: el pantano POX (Plain Old XML)
+* Intercambio depende del contenido, mal uso de los verbos, no hay recursos diversos: URI es un endpoint (escucha todas las operaciones)
+
+Nivel 1 - No es REST: Recursos
+* Los recursos se identifican con URIs separadas, uso mínimo de verbos
+
+Nivel 2 - No es REST: Verbos HTTP
+* Recursos identificados con URIs, uso de verbos y códigos de respuesta
+
+Nivel 3 - REST: Controles Hipermediales
+* Recursos identificados, uso de verbos, recursos interlinkeados
+
+## Ventajas y limitaciones
+
+Las operaciones son estándar
+* Los clientes pueden hacer supuestos seguros
+
+El servidor no guarda estado de la conversación
+* Escalabilidad masiva
+* Caches (GET)
+* (-) Cada mensaje debe enviar toda la información necesaria para completar la operación
+
+No hay una descripción estándar
+* El cliente puede cambiar el recurso, el cliente falla graciosamente
+* (-) Destinado al consumo humano
+* (-) Follow your nose
+* 
+## Resumen Principios REST
+
+1. Cliente - servidor
+2. Stateless
+3. Cacheable
+4. En capas
+5. Código móvil
+6. Interfaz uniforme
+  * Recursos tienen ID
+  * Los recursos se manipulan a través de sus representaciones
+  * Mensajes autodescriptivos
+  * HATEOAS
 
 ## Mensajería entre sistemas Pipe and Filter Publisher Subscriber Broker
 
@@ -2176,6 +2411,11 @@ Recomendable: el cliente no requiere respuestas inmediatas ante solicitudes. Res
 
 |Atributo de calidad|Ventajas|
 |-------------------|--------|
+| Disponibilidad | Temas con el mismo nombre lógico pueden replicarse en varias instancias de servidores (cluster). Cuando un servidor falla, los editores envían mensajes a las colas replicadas |
+| Manejo de fallas | Si un servidor falla, el mensaje puede ser tomado por otro servidor replicado. |
+| Flexibilidad | Alta. Debido al débil acoplamiento entre sus componentes pueden agregarse nuevos editores y subscriptores sin cambiar la arquitectura o la configuración |
+| Desempeño | Alto. Soporta miles de mensajes por segundo. Según la calidad de la tecnología de envío de mensajes, mensajería no confiable es más rápida. |
+| Esalabilidad | Alta. Los topics pueden replicarse en clusters de servidores. |
 
 ## Publisher subscriber
 
@@ -2189,6 +2429,11 @@ Recomendable: en aplicaciones asíncronas con mensajería 1-N o N-N
 
 |Atributo de calidad|Ventajas|
 |-------------------|--------|
+| Disponibilidad | Temas con el mismo nombre lógico pueden replicarse en varias instancias de servidores (cluster). Cuando un servidor falla, los editores envían mensajes a las colas replicadas |
+| Manejo de fallas | Si un servidor falla, el mensaje puede ser tomado por otro servidor replicado. |
+| Flexibilidad | Alta. Debido al débil acoplamiento entre sus componentes pueden agregarse nuevos editores y subscriptores sin cambiar la arquitectura o la configuración |
+| Desempeño | Alto. Soporta miles de mensajes por segundo. Según la calidad de la tecnología de envío de mensajes, mensajería no confiable es más rápida. |
+| Esalabilidad | Alta. Los topics pueden replicarse en clusters de servidores. |
 
 ## Broker
 
@@ -2200,14 +2445,17 @@ Recomendable: cuando los componentes intercambian mensajes que requieren fuerte 
 
 |Atributo de calidad|Ventajas|
 |-------------------|--------|
+| Disponibilidad | Los Brokers deben estar replicados, usando la misma técnica de publisher - subscriber. |
+| Manejo de fallas | Como los brokers tienen puertos de entrada tipificados, validan y descartan mensajes enviados con formato incorrecto. |
+| Flexibilidad | Alta. Como la transformación y e l ruteo están separadas de los senders y receivers, la modificación de la aplicación se facilita. |
+| Desempeño | Alto. Soporta miles de mensajes por segundo. Los brokers
+pueden convertirse en cuello de botella sobre todo si atienden altos
+volúmenes de mensajes y ejecutan transformaciones complejas. |
+| Esalabilidad | Alta. Los brokers pueden replicarse en clusters de servidores. |
 
-## Eventos: Recordatorio de desacoplamiento
+## ESB - Enterprise Service Book
 
-## ESB
-
-Enterprise Service Book
-
-PONER IMAGEN
+![ESB](Imagenes/9ESB.png "ESB")
 
 Es un sistema de mensajería empresarial basado en el intercambio de mensajes XML
 
@@ -2245,8 +2493,3 @@ Permiten al ESB interactuar fácilmente con los protocolos de comunicación o me
 * HTTP, FTP, POP3, SMP, sistema de archivos
 
 Los adaptadores se configuran editando rchivos de configuración en formato XML
-
-
-
-
-
