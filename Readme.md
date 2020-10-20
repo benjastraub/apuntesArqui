@@ -2411,11 +2411,18 @@ Recomendable: el cliente no requiere respuestas inmediatas ante solicitudes. Res
 
 |Atributo de calidad|Ventajas|
 |-------------------|--------|
-| Disponibilidad | Temas con el mismo nombre lógico pueden replicarse en varias instancias de servidores (cluster). Cuando un servidor falla, los editores envían mensajes a las colas replicadas |
-| Manejo de fallas | Si un servidor falla, el mensaje puede ser tomado por otro servidor replicado. |
-| Flexibilidad | Alta. Debido al débil acoplamiento entre sus componentes pueden agregarse nuevos editores y subscriptores sin cambiar la arquitectura o la configuración |
-| Desempeño | Alto. Soporta miles de mensajes por segundo. Según la calidad de la tecnología de envío de mensajes, mensajería no confiable es más rápida. |
-| Esalabilidad | Alta. Los topics pueden replicarse en clusters de servidores. |
+| Disponibilidad | Flujos con el mismo nombre lógico pueden replicarse en varias
+instancias de servidores (cluster). Cuando un servidor falla, los
+editores envían mensajes a las colas replicadas. |
+| Manejo de fallas | Si un servidor (filtro) falla, el mensaje puede ser tomado por otro
+servidor replicado. |
+| Flexibilidad | Alta. Debido al débil acoplamiento entre sus componentes pueden
+Modificarse los flujos de información sin cambiar la arquitectura
+o la configuración general. |
+| Desempeño | Alto. Si bien depende de los filtros, el patrón no restringe el desempeño.
+Según la calidad de la tecnología de envío de mensajes se puede alterar
+este parámetro, mensajería no confiable tiende a ser más rápida. |
+| Esalabilidad | Alta. Los filtros (componentes) pueden replicarse en nuevos servidores. |
 
 ## Publisher subscriber
 
