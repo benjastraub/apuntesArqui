@@ -2500,3 +2500,58 @@ Permiten al ESB interactuar fácilmente con los protocolos de comunicación o me
 * HTTP, FTP, POP3, SMP, sistema de archivos
 
 Los adaptadores se configuran editando rchivos de configuración en formato XML
+
+# Clase 11 - Pruebas arquitectónicas
+
+## Retos
+
+Requiere expertos para identificar riesgos no predecibles y crisis conocidas
+
+Falta de entendimiendo del diseño de alto nivel
+* No hay documentos de las decisiones de diseño arquitectónico
+* UML no es lo suficientemente expresivo
+
+Requisitos de calidad no están bien redactados o terminados
+* Flexibilidad: pero de qué componente, subsistema, etc.
+
+## Taxonomía de evaluaciones de arquitecturas
+
+## Basada en escenarios
+
+## Diferencias en métodos de evaluación
+
+## Revisiones arquitectónicas
+
+Se usan tecnicas basadas en escenarios
+
+Suelen ser muy costosas para equipos enfocados en productividad
+* Releases de tiempo corto
+* Plazos apretados
+* Poca documentación de desiciones arquitectónicas
+* Requisitos con cambios frecuentes
+* Equipos pequeños
+
+## Técnicas cuantitativas
+
+Modelos matemáticos basados en++++++++++++++++++++++++++++++++++++++++++
+
+## Técnicas basdas en métricas
+
+Definif métricas que permitan medir el software
+* Definir qué se quiere evaluar
+* Definir métricas
+  * Acoplamiento entre módulos (CBM)
+* Planear un diseño de arquitectura real
+* Identificar las desviaciones entre la arquitectura deseada y la real
+* Formulas cambios
+
+## Ejemplos de métricas
+
+## Basado en herramientas
+
+## Evaluaciones cuando el sistema ya está desarrollado
+
+Conocer el stack
+
+Conocer cómo se tratan los mensajes desde que ============================================
+
