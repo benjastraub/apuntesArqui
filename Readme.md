@@ -2503,7 +2503,40 @@ Los adaptadores se configuran editando rchivos de configuración en formato XML
 
 # Clase 10 - NoSQL
 
-## No SQL Umbrellaterm
+## NoSQL Umbrella term
+
+Alternativa a DB relacionales basadas en SQL
+
+SQL es un DSL desclarativo
+
+Modelo relacional:
+* Entidades altamente estrtucturadas con relaciones estrictas entre ellas
+* Complejidad y eficiencia impredesible
+* Impone un modelo de datos que no siempre sirve (Objetos)
+* Crecimiento-> Distribución física -> Replicación de datos (desnormalización) -> Ya no es
+relacional
+
+## NoSQL
+
+Meta
+* Simplificar la manipulación de datos con tal de poder predecir el performance de las queries
+* La complejidad de las queries las maneja el developer
+
+SQL
+* Principios ACID (Atomicity, Consistency, Isolation, Durability)
+
+NoSQL
+* Relajan los principios ACID
+
+## Categorías emergentes de NoSQL
+
+Grafos
+
+Tablas
+
+Documentos
+
+Key Value
 
 # Clase 11 - Pruebas arquitectónicas
 
@@ -2520,9 +2553,39 @@ Requisitos de calidad no están bien redactados o terminados
 
 ## Taxonomía de evaluaciones de arquitecturas
 
+![Taxonomia de evaluaciones de arquitecturas](Imagenes/10TaxonomiaArquitecturas.png "Taxonomia de evaluaciones de arquitecturas")
+
 ## Basada en escenarios
 
+Escenario: describe brevemente la interacción desde el punto de vista de los interesados de un sistema.
+
+* Expresa un atributo de calidad de software y compensa la falta de entendimiento básico para expresar el atributo
+* El diseño arquitectónico debería poder soportar el escenario. De lo contrario se diagnostican cambios al diseño arquitectónico
+* Los interesados son fundamentales para identificar escenarios
+
+No requieren construir software para validar el diseño
+
+Es cualitativo
+
+SAAM, ATAM, ALPSM, ALMA, SIBAR, SALUTA, SAAMCS,
+ESAAMI, ASAAM, SACAM, DoSAM
+
+![Basada en esecenarios](Imagenes/10BasadaEnEscenarios.png "Basada en esecenarios")
+
 ## Diferencias en métodos de evaluación
+
+|  | Specific Goals | Activities | Scenario classification | Scenarios impact analysis | Approaches used | Objects analyzed | Adressedd QAs |
+| - | - | - | - | - | - | - | - |
+| SAAM | - | - | - | - | - | - | - |
+| ATAM | - | - | - | - | - | - | - |
+| ALMA | - | - | - | - | - | - | - |
+| SALUTA | - | - | - | - | - | - | - |
+| SBAR | - | - | - | - | - | - | - |
+| SAAMCS | - | - | - | - | - | - | - |
+| ESAAMI | - | - | - | - | - | - | - |
+| ASAAM | - | - | - | - | - | - | - |
+| SACAM | - | - | - | - | - | - | - |
+| DoSAM | - | - | - | - | - | - | - |
 
 ## Revisiones arquitectónicas
 
@@ -2537,7 +2600,19 @@ Suelen ser muy costosas para equipos enfocados en productividad
 
 ## Técnicas cuantitativas
 
-Modelos matemáticos basados en++++++++++++++++++++++++++++++++++++++++++
+Modelos matemáticos basados en estadísticas
+
+Confiabilidad 
+* Modelos de caja blanca
+* Basado en recorridos, estados, aditivo
+  * Recorridos: grafos de dependencia de componentes (CDG, CFG)
+  * Estado: Estado de los componentes arquitectónicos según pasa el control de flujo (Cadenas de Markov)
+
+Performance (SPE, Software Performance Engineering)
+* Modelos de ejecución (grafos)
+* Modelos de redes de colas (QNM)
+* Cuadro de Secuencia de Mensajes (Escenarios + UML)
+* PASA (Anterior + patrones)
 
 ## Técnicas basdas en métricas
 
@@ -2549,13 +2624,26 @@ Definif métricas que permitan medir el software
 * Identificar las desviaciones entre la arquitectura deseada y la real
 * Formulas cambios
 
-## Ejemplos de métricas
-
 ## Basado en herramientas
+
+Herramientas permiten medir si la arquitectura cumple con ciertos criterios de manera automática
+
+Explotan las propiedades de refelxión de algunos lenguajes
+
+Visualizaciones estáticas y dinámicas
 
 ## Evaluaciones cuando el sistema ya está desarrollado
 
 Conocer el stack
 
-Conocer cómo se tratan los mensajes desde que ============================================
+Conocer como se tratan los mensajes desde que
+llegan desde el usuario u otras fuentes hasta que
+son respondidos/guardados/etc
+
+Identificar las herramientas más apropiadas para
+medir lo correspondiente en cada paso del stack
+
+Medir es intervenir
+
+## Ejemplos de software en las slides :eyes:
 
