@@ -2501,6 +2501,10 @@ Permiten al ESB interactuar fácilmente con los protocolos de comunicación o me
 
 Los adaptadores se configuran editando rchivos de configuración en formato XML
 
+# Clase 10 - NoSQL
+
+## No SQL Umbrellaterm
+
 # Clase 11 - Pruebas arquitectónicas
 
 ## Retos
